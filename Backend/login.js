@@ -2,10 +2,16 @@ import pool from "./db.js";
 
 // get details of user
 export const getDetails = async (req, res) => {
-    const result = await pool.query("SELECT * FROM users")
-    console.log(result);
-    
-    return    res.send(result)
+    const key = req.query.key
+
+    if (key === process.env.SECRET_KEY) {
+        const result = await pool.query("SELECT * FROM users")
+        console.log(result);
+        return res.json(result, { success: true })
+    }
+
+    return res.send({ success: false })
+
 }
 
 // insert data in database
