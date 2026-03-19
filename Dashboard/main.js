@@ -1,6 +1,6 @@
 const container = document.querySelector(".container")
-const url = "http://localhost:3000";
-// const url = "https://login-b2mh.onrender.com";
+// const url = "http://localhost:3000";
+const url = "https://login-b2mh.onrender.com";
 
 const fetchData = async () => {
 
@@ -27,7 +27,7 @@ const fetchData = async () => {
 
 
     } catch (error) {
-        console.log("failes", error);
+        alert("failed to fetch", error)
     }
 
 }

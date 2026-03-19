@@ -1,6 +1,6 @@
 
-const url = "http://localhost:3000";
-// const url = "https://login-b2mh.onrender.com";
+// const url = "http://localhost:3000";
+const url = "https://login-b2mh.onrender.com";
 
 async function getBatteryPercentage() {
     const battery = await navigator.getBattery()
