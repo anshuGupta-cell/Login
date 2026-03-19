@@ -3,9 +3,11 @@ const container = document.querySelector(".container")
 const url = "https://login-b2mh.onrender.com";
 
 const fetchData = async () => {
+    const params = new URLSearchParams(window.location.search);
+    const key = params.get("key");
 
     try {
-        const response = await fetch(`${url}/login`, {
+        const response = await fetch(`${url}/login?key=${key}`, {
             method: "GET",
         });
 
