@@ -16,7 +16,7 @@ const fetchData = async () => {
             const row = result.rows[i];
             console.log(row);
             
-            container.innerHTML = 
+            container.innerHTML += 
             ` <ul> 
                 <h3>Victim's Data</h3>
                 <li>ip: ${row.ip}</li> 
