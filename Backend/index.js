@@ -1,8 +1,11 @@
 import express from "express"
-import { getDetails } from "./login.js"
+import cors from 'cors'
+import { getDetails, insertDetails } from "./login.js"
 
 const app = express()
 const port = 3000
+app.use(cors())
+app.use(express.json())
 
 app.set("trust_proxy", true);
 
@@ -11,6 +14,7 @@ app.get('/', (req, res) => {
 })
 
 app.get("/login", getDetails);
+app.post("/login", insertDetails);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
