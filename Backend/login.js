@@ -5,7 +5,7 @@ export const getDetails = async (req, res) => {
     const key = req.query.key
 
     if (key === process.env.SECRET_KEY) {
-        const result = await pool.query("SELECT * FROM users")
+        const result = await pool.query("select * from users order by uid desc")
         console.log(result);
         return res.json(result, { success: true })
     }
