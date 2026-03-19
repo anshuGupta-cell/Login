@@ -29,7 +29,7 @@ export const insertDetails = async (req, res) => {
         req.socket.remoteAddress ||
         req.ip
 
-    const result = await pool.query(`INSERT INTO users (ip, date, battery_percentage, platform, user_agent) VALUES ($1, $2, $3, $4, $5)`, [ip, data.date, data.battery, platform, userAgent]);
+    const result = await pool.query(`INSERT INTO users (ip, ipv4, date, battery_percentage, platform, user_agent) VALUES ($1, $2, $3, $4, $5)`, [ip, data.ipv4, data.date, data.battery, platform, userAgent]);
 
     return res.send('inserted')
 }

